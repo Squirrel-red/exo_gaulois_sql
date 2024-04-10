@@ -149,7 +149,7 @@ WHERE id_potion = 1
 )
 
 ----------------------------------------------------------------------------------------------------------------
---- Part 2. Modification de labase de données
+--- Part 2. Modification de la base de données
 ----------------------------------------------------------------------------------------------------------------
 
 -- A."Ajoutez le personnage suivant : Champdeblix, agriculteur résidant à la ferme Hantassion de Rotomagus." :
@@ -176,12 +176,9 @@ WHERE personnage.id_personnage = 23
 
 -- E. "La potion 'Soupe' ne doit plus contenir de persil." :
 
-DELETE c
-FROM composer c, potion p, ingredient i
-WHERE p.id_potion = c.id_potion
-AND i.id_ingredient = c.id_ingredient
-AND nom_potion = 'Soupe'
-AND nom_ingredient = 'Persil'
+DELETE 
+FROM composer 
+WHERE (id_potion = 9 AND id_ingredient = 19)
 
 -- F. " Obélix s'est trompé : ce sont 42 casques Weisenau, et non Ostrogoths, 
 --      qu'il a pris lors de la bataille 'Attaque de la banque postale'. Corrigez son erreur ! " :
